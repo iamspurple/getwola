@@ -184,3 +184,97 @@ li {
   content: "/";
   margin-left: 12px;
 }
+
+.subscribe {
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px;
+  gap: 20px;
+  color: white;
+  background-color: var(--color-pink);
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.subscribe::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(/assets/icons/union.svg) center/cover no-repeat;
+}
+
+.subscribe > * {
+  position: relative;
+  z-index: 100;
+}
+
+.subscribe > svg {
+  max-width: 245px;
+}
+
+.subscribe-text {
+  font-size: 18px;
+  line-height: 120%;
+  font-weight: 600;
+  position: relative;
+}
+
+.subscribe-button {
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 16px;
+  border: none;
+  border-radius: 8px;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--color-blue);
+}
+
+.subscribe-button::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  aspect-ratio: 1;
+  background: url(/assets/icons/plus.svg) center/contain no-repeat;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-inline: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding-block: 24px;
+  }
+
+  .container {
+    padding-inline: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-inline: 12px;
+  }
+}

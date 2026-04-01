@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/blog.css" />
   </head>
   <body>
     <main class="main">
@@ -461,22 +461,50 @@
               <ul class="blog-filters">
                 <li>
                   <a class="blog-filters-item active" href="#"
-                    >Все публикации</a
+                    >Все публикации <span class="quantity">248</span></a
                   >
                 </li>
                 <li>
-                  <a class="blog-filters-item" href="#">Статьи о воде</a>
+                  <a class="blog-filters-item" href="#"
+                    >Статьи о воде <span class="quantity">200</span></a
+                  >
                 </li>
                 <li>
-                  <a class="blog-filters-item" href="#">Обзоры товаров</a>
+                  <a class="blog-filters-item" href="#"
+                    >Обзоры товаров <span class="quantity">36</span></a
+                  >
                 </li>
                 <li>
-                  <a class="blog-filters-item" href="#">Советы покупателям</a>
+                  <a class="blog-filters-item" href="#"
+                    >Советы покупателям <span class="quantity">12</span></a
+                  >
                 </li>
               </ul>
               <div class="subscribe">
-                <h3 class="subscribe-title">Подпишитесь</h3>
-                <p class="subscribe-text">на рассылку наших новостей и акций</p>
+                <svg aria-label="Подпишитесь" role="img" viewBox="0 0 800 200">
+                  <text
+                    x="50%"
+                    y="50%"
+                    dominant-baseline="middle"
+                    text-anchor="middle"
+                    font-size="80"
+                    font-weight="600"
+                    fill="white"
+                    stroke="#2f6df6"
+                    stroke-width="49"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    paint-order="stroke"
+                  >
+                    Подпишитесь
+                  </text>
+                </svg>
+
+                <p class="subscribe-text">
+                  на рассылку <br />
+                  наших новостей <br />
+                  и акций
+                </p>
                 <button class="subscribe-button">Подписаться</button>
               </div>
             </div>
