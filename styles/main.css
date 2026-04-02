@@ -147,10 +147,13 @@ li {
   --font-secondary: "Mulish";
   --color-blue: #2673ff;
   --color-pink: #ff5959;
+  --color-green: #22ba59;
   --color-accent: #40e0d0;
   --color-grey: #9c9eb7;
   --color-lightgrey: #f7f7fa;
   --color-text: #1f1f1f;
+  --color-text-secondary: #737373;
+  scroll-behavior: smooth;
 }
 
 .main {
