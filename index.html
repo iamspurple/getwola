@@ -512,5 +512,18 @@
         </section>
       </div>
     </main>
+    <script>
+      (function () {
+        const title = document.querySelector(".blog-title");
+        if (!title) return;
+
+        function showWidth() {
+          title.textContent = "Статьи — " + window.innerWidth + " px";
+        }
+
+        showWidth();
+        window.addEventListener("resize", showWidth);
+      })();
+    </script>
   </body>
 </html>
