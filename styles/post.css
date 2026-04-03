@@ -159,39 +159,6 @@
   object-fit: cover;
 }
 
-.post-container .post-body .post-block p {
-  margin-top: 24px;
-  font-family: var(--font-secondary);
-  font-size: 20px;
-  line-height: 150%;
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.post-container .post-body .post-block h2 {
-  margin-top: 60px;
-  font-family: var(--font-primary);
-  font-size: 32px;
-  line-height: 130%;
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.post-container .post-body .post-block ul {
-  margin-top: 24px;
-  list-style: disc;
-  padding-left: 20px;
-  font-family: var(--font-secondary);
-  font-size: 20px;
-  line-height: 150%;
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.post-container .post-body .post-block ul li {
-  list-style: disc;
-}
-
 .products {
   margin-top: 60px;
   display: flex;
@@ -471,6 +438,7 @@
 }
 
 .blog-title {
+  margin-top: 0;
   font-family: var(--font-primary);
   font-size: 32px;
   line-height: 130%;
@@ -640,6 +608,7 @@
 }
 
 .rate-title {
+  margin-top: 0;
   font-family: var(--font-primary);
   font-size: 32px;
   line-height: 42px;
@@ -724,7 +693,6 @@
     font-size: 36px;
   }
 
-  .post-container .post-body .post-block h2,
   .products-title,
   .blog-title,
   .rate-title {
@@ -732,8 +700,6 @@
   }
 
   .post-description,
-  .post-container .post-body .post-block p,
-  .post-container .post-body .post-block ul,
   .rate-positive {
     font-size: 18px;
   }
@@ -746,7 +712,6 @@
     margin-top: 30px;
   }
 
-  .post-container .post-body .post-block h2,
   .products,
   .blog,
   .rate {
@@ -777,7 +742,6 @@
     font-size: 32px;
   }
 
-  .post-container .post-body .post-block h2,
   .products-title,
   .blog-title,
   .rate-title {
@@ -788,7 +752,6 @@
     margin-top: 20px;
   }
 
-  .post-container .post-body .post-block h2,
   .products,
   .blog,
   .rate {
@@ -842,15 +805,9 @@
     margin-top: 24px;
   }
 
-  .post-container .post-body .post-block h2,
   .products-title,
   .blog-title {
     font-size: 22px;
-  }
-
-  .post-container .post-body .post-block p,
-  .post-container .post-body .post-block ul {
-    margin-top: 20px;
   }
 
   .products-button,
