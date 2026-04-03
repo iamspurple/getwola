@@ -76,6 +76,8 @@ a {
 ul,
 li {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
@@ -92,6 +94,10 @@ li {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: var(--font-secondary);
+}
+
 .main {
   padding-block: 40px;
 }
@@ -103,7 +109,7 @@ li {
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  column-gap: 12px;
   font-family: var(--font-secondary);
   font-weight: 500;
   font-size: 14px;
@@ -117,6 +123,7 @@ li {
 @media (any-hover: hover) {
   .breadcrumbs li a:hover {
     color: var(--color-text);
+    text-decoration: underline;
   }
 }
 
@@ -165,6 +172,7 @@ li {
   line-height: 120%;
   font-weight: 600;
   position: relative;
+  text-align: center;
 }
 
 .subscribe-button {

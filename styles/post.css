@@ -6,7 +6,6 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
   column-gap: 40px;
-  row-gap: 60px;
 }
 
 .post-header {
@@ -146,12 +145,6 @@
   font-weight: 600;
 }
 
-.post-body {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
 .post-image {
   width: 100%;
   aspect-ratio: 1.78;
@@ -166,21 +159,8 @@
   object-fit: cover;
 }
 
-.post-block {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.post-subtitle {
-  font-family: var(--font-primary);
-  font-size: 32px;
-  line-height: 130%;
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.post-text {
+.post-container .post-body .post-block p {
+  margin-top: 24px;
   font-family: var(--font-secondary);
   font-size: 20px;
   line-height: 150%;
@@ -188,7 +168,17 @@
   color: var(--color-text);
 }
 
-.post-text-list {
+.post-container .post-body .post-block h2 {
+  margin-top: 60px;
+  font-family: var(--font-primary);
+  font-size: 32px;
+  line-height: 130%;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.post-container .post-body .post-block ul {
+  margin-top: 24px;
   list-style: disc;
   padding-left: 20px;
   font-family: var(--font-secondary);
@@ -198,11 +188,12 @@
   color: var(--color-text);
 }
 
-.post-text-list li {
+.post-container .post-body .post-block ul li {
   list-style: disc;
 }
 
 .products {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -215,6 +206,7 @@
 }
 
 .products-title {
+  margin-top: 0;
   font-family: var(--font-primary);
   font-size: 32px;
   line-height: 130%;
@@ -261,6 +253,7 @@
 }
 
 .products-list {
+  list-style: none;
   display: flex;
   gap: 8px;
   transition: transform 0.3s ease;
@@ -275,6 +268,7 @@
 
 .products-slide {
   flex-shrink: 0;
+  list-style: none;
 }
 
 .products-slide .products-item {
@@ -464,6 +458,7 @@
 }
 
 .blog {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -522,6 +517,7 @@
 }
 
 .blog-list {
+  list-style: none;
   display: flex;
   gap: 24px;
   transition: transform 0.3s ease;
@@ -536,6 +532,7 @@
 
 .blog-slide {
   flex-shrink: 0;
+  list-style: none;
 }
 
 .blog-slide .blog-item {
@@ -628,8 +625,8 @@
 }
 
 .rate {
+  margin-top: 60px;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 60px;
 }
@@ -727,7 +724,7 @@
     font-size: 36px;
   }
 
-  .post-subtitle,
+  .post-container .post-body .post-block h2,
   .products-title,
   .blog-title,
   .rate-title {
@@ -735,14 +732,10 @@
   }
 
   .post-description,
-  .post-text,
-  .post-text-list,
+  .post-container .post-body .post-block p,
+  .post-container .post-body .post-block ul,
   .rate-positive {
     font-size: 18px;
-  }
-
-  .post-container {
-    row-gap: 50px;
   }
 
   .post-header {
@@ -753,8 +746,16 @@
     margin-top: 30px;
   }
 
-  .post-body {
-    gap: 50px;
+  .post-container .post-body .post-block h2,
+  .products,
+  .blog,
+  .rate {
+    margin-top: 50px;
+  }
+
+  .blog-title,
+  .products-title {
+    margin-top: 0;
   }
 
   .rate {
@@ -776,23 +777,22 @@
     font-size: 32px;
   }
 
-  .post-subtitle,
+  .post-container .post-body .post-block h2,
   .products-title,
   .blog-title,
   .rate-title {
     font-size: 24px;
   }
 
-  .post-container {
-    row-gap: 40px;
-  }
-
   .post-image {
     margin-top: 20px;
   }
 
-  .post-body {
-    gap: 40px;
+  .post-container .post-body .post-block h2,
+  .products,
+  .blog,
+  .rate {
+    margin-top: 40px;
   }
 
   .rate {
@@ -813,6 +813,7 @@
 
   .post-content {
     position: static;
+    margin-top: 40px;
   }
 
   .rate-controls {
@@ -821,6 +822,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .post {
+    padding-top: 24px;
+  }
+
   .post-title {
     font-size: 24px;
   }
@@ -829,14 +834,23 @@
     gap: 24px;
   }
 
-  .post-subtitle,
+  .post-image {
+    margin-top: 0;
+  }
+
+  .post-content {
+    margin-top: 24px;
+  }
+
+  .post-container .post-body .post-block h2,
   .products-title,
   .blog-title {
     font-size: 22px;
   }
 
-  .post-block {
-    gap: 20px;
+  .post-container .post-body .post-block p,
+  .post-container .post-body .post-block ul {
+    margin-top: 20px;
   }
 
   .products-button,
