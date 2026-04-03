@@ -28,332 +28,328 @@
   }
 }
 
-.post-block {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-primary);
-    margin-top: 1.8em;
-    line-height: 1.3em;
-    font-weight: 500;
+.post-block h2,
+.post-block h3,
+.post-block h4,
+.post-block h5,
+.post-block h6 {
+  font-family: var(--font-primary);
+  margin-top: 1.8em;
+  line-height: 1.3em;
+  font-weight: 500;
+}
+
+.post-block h2 {
+  font-size: 1.6em;
+}
+
+.post-block h3 {
+  font-size: 1.5em;
+}
+
+.post-block h4 {
+  font-size: 1.25em;
+}
+
+.post-block h5 {
+  font-size: 1em;
+}
+
+.post-block h6 {
+  font-size: 0.875em;
+  font-weight: normal;
+}
+
+.post-block p {
+  margin-top: 1.2em;
+}
+
+.post-block a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.post-block a:hover {
+  text-decoration: underline;
+}
+
+.post-block ul,
+.post-block ol {
+  margin-top: 1.2em;
+  padding-left: 1em;
+}
+
+.post-block ul {
+  list-style: disc;
+}
+
+.post-block ol {
+  list-style: decimal;
+}
+
+.post-block li {
+  margin-bottom: 0.5em;
+  list-style: inherit;
+}
+
+.post-block blockquote {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #f9f9f9;
+  border-left: 5px solid #ccc;
+}
+
+.post-block code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.post-block pre {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 3px;
+  overflow-x: auto;
+}
+
+.post-block table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.post-block th,
+.post-block td {
+  border: 1px solid #ddd;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+.post-block th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.post-block caption {
+  padding: 0.5em 0;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.post-block abbr[title] {
+  text-decoration: dotted underline;
+  cursor: help;
+}
+
+.post-block mark {
+  background-color: #fffb91;
+  color: inherit;
+  padding: 0.1em 0.2em;
+}
+
+.post-block small {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.post-block strong {
+  font-weight: 600;
+}
+
+.post-block em {
+  font-style: italic;
+}
+
+.post-block del {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.post-block ins {
+  text-decoration: none;
+  background-color: #e6ffed;
+}
+
+.post-block sub,
+.post-block sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.post-block sup {
+  top: -0.4em;
+}
+
+.post-block sub {
+  bottom: -0.2em;
+}
+
+.post-block kbd {
+  font-family: monospace;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+.post-block samp {
+  font-family: monospace;
+  color: #555;
+}
+
+.post-block var {
+  font-style: italic;
+  color: #333;
+}
+
+.post-block dfn {
+  font-style: italic;
+  border-bottom: 1px dotted #999;
+  cursor: help;
+}
+
+.post-block q {
+  quotes: "“" "”" "‘" "’";
+}
+
+.post-block q::before {
+  content: open-quote;
+}
+
+.post-block q::after {
+  content: close-quote;
+}
+
+.post-block cite {
+  font-style: italic;
+  color: #555;
+}
+
+.post-block time {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.post-block hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 2em 0;
+}
+
+.post-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 8px;
+}
+
+.post-block figure {
+  margin: 1.5em 0;
+}
+
+.post-block figcaption {
+  font-size: 0.9em;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.post-block details {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.post-block summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.post-block address {
+  font-style: normal;
+  color: #666;
+  line-height: 1.4;
+}
+
+.post-block bdi {
+  unicode-bidi: isolate;
+}
+
+.post-block bdo {
+  unicode-bidi: bidi-override;
+}
+
+.post-block ruby {
+  font-size: 1em;
+}
+
+.post-block rt {
+  font-size: 0.6em;
+  color: #999;
+}
+
+.post-block progress {
+  width: 100%;
+  height: 1em;
+}
+
+.post-block meter {
+  width: 100%;
+  height: 1em;
+}
+
+.post-block ::selection {
+  background: #b3d4fc;
+  color: #000;
+}
+
+.post-block :focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .post-block small {
+    font-size: 0.8em;
   }
 
-  h2 {
-    font-size: 1.6em;
+  .post-block figcaption {
+    font-size: 0.8em;
   }
 
-  h3 {
-    font-size: 1.5em;
-  }
-
-  h4 {
-    font-size: 1.25em;
-  }
-
-  h5 {
-    font-size: 1em;
-  }
-
-  h6 {
-    font-size: 0.875em;
-    font-weight: normal;
-  }
-
-  p {
-    margin-top: 1.2em;
-  }
-
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  ul,
-  ol {
-    margin-top: 1.2em;
-    padding-left: 1em;
-  }
-
-  ul {
-    list-style: disc;
-  }
-
-  ol {
-    list-style: decimal;
-  }
-
-  li {
-    margin-bottom: 0.5em;
-    list-style: inherit;
-  }
-
-  blockquote {
-    margin: 1em 0;
-    padding: 1em;
-    background-color: #f9f9f9;
-    border-left: 5px solid #ccc;
-  }
-
-  code {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #f4f4f4;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-  }
-
-  pre {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #f4f4f4;
-    padding: 1em;
-    border-radius: 3px;
-    overflow-x: auto;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1em 0;
-  }
-
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 0.5em 1em;
-    text-align: left;
-  }
-
-  th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-
-  caption {
-    padding: 0.5em 0;
-    font-size: 1.25em;
-    font-weight: bold;
-    text-align: left;
-  }
-
-  abbr[title] {
-    text-decoration: dotted underline;
-    cursor: help;
-  }
-
-  mark {
-    background-color: #fffb91;
-    color: inherit;
-    padding: 0.1em 0.2em;
-  }
-
-  small {
-    font-size: 0.85em;
-    color: #666;
-  }
-
-  strong {
-    font-weight: 600;
-  }
-
-  em {
-    font-style: italic;
-  }
-
-  del {
-    text-decoration: line-through;
-    color: #999;
-  }
-
-  ins {
-    text-decoration: none;
-    background-color: #e6ffed;
-  }
-
-  sub,
-  sup {
-    font-size: 0.75em;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
-
-  sup {
-    top: -0.4em;
-  }
-
-  sub {
-    bottom: -0.2em;
-  }
-
-  kbd {
-    font-family: monospace;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    padding: 0.1em 0.4em;
-    border-radius: 3px;
-  }
-
-  samp {
-    font-family: monospace;
-    color: #555;
-  }
-
-  var {
-    font-style: italic;
-    color: #333;
-  }
-
-  dfn {
-    font-style: italic;
-    border-bottom: 1px dotted #999;
-    cursor: help;
-  }
-
-  q {
-    quotes: "“" "”" "‘" "’";
-  }
-
-  q::before {
-    content: open-quote;
-  }
-
-  q::after {
-    content: close-quote;
-  }
-
-  cite {
-    font-style: italic;
-    color: #555;
-  }
-
-  time {
-    color: #666;
-    font-size: 0.9em;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #e5e5e5;
-    margin: 2em 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1.5em auto;
-    border-radius: 8px;
-  }
-
-  figure {
+  .post-block hr {
     margin: 1.5em 0;
-  }
-
-  figcaption {
-    font-size: 0.9em;
-    color: #666;
-    text-align: center;
-    margin-top: 0.5em;
-  }
-
-  details {
-    margin: 1em 0;
-    padding: 0.5em 1em;
-    background: #fafafa;
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-  }
-
-  summary {
-    cursor: pointer;
-    font-weight: 500;
-  }
-
-  address {
-    font-style: normal;
-    color: #666;
-    line-height: 1.4;
-  }
-
-  bdi {
-    unicode-bidi: isolate;
-  }
-
-  bdo {
-    unicode-bidi: bidi-override;
-  }
-
-  ruby {
-    font-size: 1em;
-  }
-
-  rt {
-    font-size: 0.6em;
-    color: #999;
-  }
-
-  progress {
-    width: 100%;
-    height: 1em;
-  }
-
-  meter {
-    width: 100%;
-    height: 1em;
-  }
-
-  ::selection {
-    background: #b3d4fc;
-    color: #000;
-  }
-
-  :focus-visible {
-    outline: 2px solid #0066cc;
-    outline-offset: 2px;
-  }
-
-  @media (max-width: 768px) {
-    small {
-      font-size: 0.8em;
-    }
-
-    figcaption {
-      font-size: 0.8em;
-    }
-
-    hr {
-      margin: 1.5em 0;
-    }
   }
 }
 
 @media screen and (max-width: 480px) {
-  .post-block {
-    h2 {
-      font-size: 1.22em;
-    }
+  .post-block h2 {
+    font-size: 1.22em;
+  }
 
-    h3 {
-      font-size: 1.2em;
-    }
+  .post-block h3 {
+    font-size: 1.2em;
+  }
 
-    h4 {
-      font-size: 1.15em;
-    }
+  .post-block h4 {
+    font-size: 1.15em;
+  }
 
-    h5 {
-      font-size: 1.1em;
-    }
+  .post-block h5 {
+    font-size: 1.1em;
+  }
 
-    h6 {
-      font-size: 1em;
-      font-weight: normal;
-    }
+  .post-block h6 {
+    font-size: 1em;
+    font-weight: normal;
   }
 }
