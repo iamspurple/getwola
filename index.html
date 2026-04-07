@@ -505,12 +505,60 @@
                   наших новостей <br />
                   и акций
                 </p>
-                <button class="subscribe-button">Подписаться</button>
+                <button
+                  id="open-modal-btn"
+                  type="button"
+                  class="subscribe-button"
+                >
+                  Подписаться
+                </button>
               </div>
             </div>
           </div>
         </section>
       </div>
     </main>
+    <div id="overlay" class="overlay" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <h2 id="modal-title" class="modal-title">
+            Подписка <br />
+            на рассылку
+          </h2>
+          <button id="close-modal-btn" type="button" class="modal-close-btn">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.24408 5.24408C5.56951 4.91864 6.09715 4.91864 6.42259 5.24408L10 8.82149L13.5774 5.24408C13.9028 4.91864 14.4305 4.91864 14.7559 5.24408C15.0814 5.56951 15.0814 6.09715 14.7559 6.42259L11.1785 10L14.7559 13.5774C15.0814 13.9028 15.0814 14.4305 14.7559 14.7559C14.4305 15.0814 13.9028 15.0814 13.5774 14.7559L10 11.1785L6.42259 14.7559C6.09715 15.0814 5.56951 15.0814 5.24408 14.7559C4.91864 14.4305 4.91864 13.9028 5.24408 13.5774L8.82149 10L5.24408 6.42259C4.91864 6.09715 4.91864 5.56951 5.24408 5.24408Z"
+                fill="#5B5C70"
+              />
+            </svg>
+          </button>
+        </div>
+        <form id="modal-form" action="" class="modal-form">
+          <label for="email" class="visually-hidden">Email </label>
+          <div class="modal-input-wrapper">
+            <input id="email" name="email" type="email" placeholder="Email" />
+            <span class="modal-input-label">Email</span>
+          </div>
+          <label class="modal-policy">
+            <input type="checkbox" name="checkbox" />
+            <p>
+              Я ознакомлен и принимаю условия
+              <a href="">обработки персональных данных</a>
+            </p>
+          </label>
+          <button class="modal-submit-btn" type="submit">Подписаться</button>
+        </form>
+      </div>
+    </div>
+    <script src="/modal.js" defer></script>
   </body>
 </html>
