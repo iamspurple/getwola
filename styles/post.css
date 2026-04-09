@@ -868,6 +868,11 @@
   .rate-controls {
     width: 90%;
   }
+
+  .post-share-popup,
+  .post-share-popup.is-open {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
