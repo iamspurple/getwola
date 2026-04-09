@@ -96,6 +96,7 @@ li {
 }
 
 body {
+  margin-top: 64px;
   font-family: var(--font-secondary);
 }
 
@@ -112,10 +113,115 @@ body {
   border: 0;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #171717;
+  padding-block: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  line-height: 14px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+.header-nav {
+  width: 100%;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.header-nav-list .active {
+  color: var(--color-accent);
+}
+
+.header-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .main {
   padding-block: 40px;
 }
 
+.footer {
+  width: 100%;
+  padding-block: 40px;
+  background-color: #171717;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-contacts-list,
+.footer-nav-list,
+.footer-legal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.footer-nav-list {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
+.footer-access {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-app-list,
+.footer-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-docs-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3px;
+  row-gap: 8px;
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.footer-copyrights {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-copyrights svg {
+  margin-left: 8px;
+}
 .container {
   padding-inline: 60px;
 }
@@ -174,7 +280,7 @@ body {
 
 .subscribe > * {
   position: relative;
-  z-index: 100;
+  z-index: 20;
 }
 
 .subscribe > svg {
@@ -431,6 +537,12 @@ body.modal-open {
 }
 
 @media screen and (max-width: 1280px) {
+  .header-nav-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1280px) {
   .container {
     padding-inline: 40px;
   }
@@ -439,6 +551,12 @@ body.modal-open {
 @media screen and (max-width: 1024px) {
   .container {
     padding-inline: 30px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
   }
 }
 
@@ -453,6 +571,16 @@ body.modal-open {
 }
 
 @media screen and (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-docs-list,
+  .footer-app-list {
+    flex-direction: column;
+  }
+
   .container {
     padding-inline: 12px;
   }

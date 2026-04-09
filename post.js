@@ -154,10 +154,108 @@
   });
 })();
 
+const SHARE_DESKTOP_MIN_WIDTH_PX = 769;
+
 document.addEventListener("DOMContentLoaded", () => {
   const postContentBtn = document.getElementById("post-content-btn");
 
   postContentBtn.addEventListener("click", () => {
     postContentBtn.classList.toggle("active");
   });
+
+  const shareBtn = document.getElementById("post-share-btn");
+  const sharePopup = document.getElementById("post-share-popup");
+  const shareWrap = document.querySelector(".post-share-wrap");
+
+  if (shareBtn && sharePopup && shareWrap) {
+    function getShareUrl() {
+      const fromSchema =
+        document.querySelector('link[itemprop="url"]')?.getAttribute("href") ||
+        document
+          .querySelector('link[itemprop="mainEntityOfPage"]')
+          ?.getAttribute("href");
+      if (fromSchema) return fromSchema;
+      return window.location.href;
+    }
+
+    function getShareTitle() {
+      const h1 = document.querySelector(".post-title");
+      const t = h1?.textContent?.trim();
+      return t || document.title;
+    }
+
+    function syncShareLinks() {
+      const url = getShareUrl();
+      const encUrl = encodeURIComponent(url);
+      const encTitle = encodeURIComponent(getShareTitle());
+
+      const tg = sharePopup.querySelector('a[href*="telegram"]');
+      if (tg)
+        tg.href = `https://telegram.me/share/url?url=${encUrl}&text=${encTitle}`;
+
+      const vk = sharePopup.querySelector('a[href*="vk.com"]');
+      if (vk) vk.href = `https://vk.com/share.php?url=${encUrl}`;
+
+      const max = sharePopup.querySelector('a[href*="max.com"]');
+      if (max) max.href = `https://max.com/share?url=${encUrl}`;
+    }
+
+    function isDesktopShare() {
+      return window.matchMedia(`(min-width: ${SHARE_DESKTOP_MIN_WIDTH_PX}px)`)
+        .matches;
+    }
+
+    function closeSharePopup() {
+      sharePopup.classList.remove("is-open");
+      sharePopup.setAttribute("aria-hidden", "true");
+      shareBtn.setAttribute("aria-expanded", "false");
+    }
+
+    function openSharePopup() {
+      syncShareLinks();
+      sharePopup.setAttribute("aria-hidden", "false");
+      sharePopup.classList.add("is-open");
+      shareBtn.setAttribute("aria-expanded", "true");
+    }
+
+    function toggleSharePopup() {
+      if (sharePopup.classList.contains("is-open")) closeSharePopup();
+      else openSharePopup();
+    }
+
+    syncShareLinks();
+
+    shareBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (isDesktopShare()) {
+        toggleSharePopup();
+        return;
+      }
+      const shareData = {
+        title: getShareTitle(),
+        url: getShareUrl(),
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        syncShareLinks();
+        openSharePopup();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!sharePopup.classList.contains("is-open")) return;
+      if (!shareWrap.contains(e.target)) closeSharePopup();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeSharePopup();
+    });
+
+    window.addEventListener("resize", () => {
+      if (!isDesktopShare() && sharePopup.classList.contains("is-open")) {
+        closeSharePopup();
+      }
+    });
+  }
 });
