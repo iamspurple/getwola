@@ -1,3 +1,8 @@
+.main {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .post {
   padding-top: 40px;
 }
@@ -187,6 +192,7 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .post-content-title::after {
@@ -217,11 +223,16 @@
   overflow: hidden;
 }
 
+.post-content-list li {
+  width: 100%;
+}
+
 .post-content-list li:not(:last-of-type) {
   border-bottom: 1px solid rgba(156, 158, 183, 0.3);
 }
 
 .post-content-list li a {
+  width: 100%;
   display: inline-block;
   padding: 20px 18px;
   color: var(--color-text);
@@ -229,6 +240,15 @@
   font-size: 16px;
   line-height: 125%;
   font-weight: 600;
+  transition: 0.3s ease;
+}
+
+@media (any-hover: hover) {
+  .post-content-list li a:hover {
+    /* background-color: var(--color-lightgrey); */
+    color: black;
+    box-shadow: inset 0 0 15px rgba(50, 50, 50, 0.085);
+  }
 }
 
 .post-image {
@@ -303,6 +323,8 @@
   overflow: hidden;
   min-width: 0;
   width: 100%;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
 }
 
 .products-list {
@@ -568,6 +590,8 @@
   overflow: hidden;
   min-width: 0;
   width: 100%;
+  touch-action: pan-y;
+  overscroll-behavior-x: contain;
 }
 
 .blog-list {

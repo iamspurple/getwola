@@ -124,6 +124,54 @@
       sync();
     });
 
+    const SWIPE_MIN_PX = 48;
+    const SWIPE_DOMINANCE = 1.2;
+
+    let touchSwipeActive = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    wrapper.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.touches.length !== 1) return;
+        touchSwipeActive = true;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      },
+      { passive: true }
+    );
+
+    wrapper.addEventListener(
+      "touchcancel",
+      () => {
+        touchSwipeActive = false;
+      },
+      { passive: true }
+    );
+
+    wrapper.addEventListener(
+      "touchend",
+      (e) => {
+        if (!touchSwipeActive) return;
+        touchSwipeActive = false;
+        if (e.changedTouches.length !== 1) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchStartX;
+        const dy = t.clientY - touchStartY;
+        if (Math.abs(dx) < SWIPE_MIN_PX) return;
+        if (Math.abs(dx) < Math.abs(dy) * SWIPE_DOMINANCE) return;
+
+        if (dx < 0) {
+          index += step;
+        } else {
+          index -= step;
+        }
+        sync();
+      },
+      { passive: true }
+    );
+
     const ro = new ResizeObserver(() => sync());
     ro.observe(wrapper);
 

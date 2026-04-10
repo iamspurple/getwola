@@ -308,7 +308,7 @@
                     </ul>
                   </nav>
                 </div>
-                <div class="subscribe">
+                <div id="open-modal-btn" role="button" class="subscribe">
                   <svg
                     aria-label="Подпишитесь"
                     role="img"
@@ -337,11 +337,7 @@
                     наших новостей <br />
                     и акций
                   </p>
-                  <button
-                    id="open-modal-btn"
-                    type="button"
-                    class="subscribe-button"
-                  >
+                  <button type="button" class="subscribe-button">
                     Подписаться
                   </button>
                 </div>
@@ -1774,6 +1770,32 @@
         </a>
       </div>
     </footer>
+    <div
+      id="cookie-banner"
+      class="cookie-banner"
+      role="region"
+      aria-label="Уведомление об использовании cookie"
+      aria-hidden="false"
+    >
+      <div class="cookie-banner-inner container">
+        <p class="cookie-banner-text">
+          Мы используем файлы cookie, чтобы сайт работал стабильнее и удобнее.
+          Продолжая пользоваться сайтом, вы соглашаетесь с их применением.
+        </p>
+        <div class="cookie-banner-actions">
+          <a class="cookie-banner-link" href="https://getwola.ru/page/info"
+            >Подробнее</a
+          >
+          <button
+            type="button"
+            class="cookie-banner-btn"
+            id="cookie-banner-accept"
+          >
+            Принять
+          </button>
+        </div>
+      </div>
+    </div>
     <div id="overlay" class="overlay" aria-hidden="true">
       <div
         class="modal"
@@ -1820,6 +1842,7 @@
         </form>
       </div>
     </div>
+    <script src="/cookie-banner.js" defer></script>
     <script src="/modal.js" defer></script>
     <script src="/post.js" defer></script>
   </body>
