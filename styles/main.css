@@ -735,6 +735,7 @@ body.has-cookie-banner.has-cookie-banner--retracting {
     background-color: #171717;
     padding-top: 24px;
     padding-inline: 40px;
+    overflow-y: auto;
   }
 
   .header:has(.header-nav.open) {
